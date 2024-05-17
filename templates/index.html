@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-{% include 'includes/head.html' with title='Home Page' %}
-<body>
-{% include 'includes/navbar.html' %}
+{% extends 'layout.html' %}
+
+{% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -13,8 +11,10 @@
         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa distinctio dolore ducimus error facere impedit inventore molestiae quae quibusdam, saepe, temporibus veniam voluptate. Hic maxime nobis omnis ut voluptatum?</span><span>Aliquam amet assumenda error quasi quod quos ut. A accusantium aspernatur culpa cupiditate deserunt, fugiat incidunt itaque laudantium modi necessitatibus pariatur placeat possimus quae quos sit tempore totam vel vero?</span><span>Aperiam aspernatur atque blanditiis cum ducimus esse ex expedita fuga inventore labore magnam maxime minus nulla odio officia, possimus quod reiciendis repellat ullam unde velit veniam voluptatibus! Error, labore, officia!</span><span>Asperiores assumenda autem corporis culpa dolores explicabo iusto labore laborum molestias nobis non odit officiis optio perferendis perspiciatis quaerat qui quo rerum, saepe unde? Adipisci aperiam incidunt magni velit veniam!</span><span>Adipisci animi, deleniti dolorum nemo nisi numquam quibusdam quidem repudiandae saepe, sequi sint veniam voluptate. Aliquid deleniti ducimus et excepturi fugiat ipsam molestiae odit omnis, quidem quod ratione ut voluptates.</span><span>A accusamus, exercitationem facere in ipsam, minima nulla pariatur perspiciatis quaerat sit, totam voluptatem voluptatibus? Accusamus, adipisci at consectetur cum enim id, laborum, minima omnis quaerat quas repellat sed sint.</span><span>Aspernatur aut culpa earum maiores quae, tenetur! Ad aspernatur autem deleniti dolores laudantium molestiae, officiis possimus quis soluta suscipit? Adipisci aspernatur delectus et, optio qui ratione sed! Consequatur placeat, voluptatibus.</span><span>Aperiam enim eos inventore numquam quis. Accusantium beatae, consequatur dignissimos dolorem eaque enim ex illum inventore libero nam natus numquam odit officia qui quia quo quod repellendus similique ullam voluptatem.</span><span>Asperiores, illo itaque laudantium maxime omnis quam quisquam reiciendis voluptatum! Dignissimos eius iste magnam modi? Accusamus dicta dignissimos doloremque inventore laboriosam nesciunt nisi non perferendis, possimus quis saepe ut voluptatem.</span><span>A esse fugiat magnam. A aliquam assumenda, autem deleniti ea iure obcaecati optio reiciendis rem? Architecto consequuntur, eos ipsa itaque laboriosam minima molestias natus nemo nesciunt officiis saepe temporibus ut!</span>
     </p>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock %}
+
+{% block extra_scripts %}
+    <script>
+        console.log("Hello World");
+    </script>
+{% endblock %}
