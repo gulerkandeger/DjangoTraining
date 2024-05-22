@@ -1,20 +1,31 @@
 {% extends 'layout.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Django App</h1>
+            <h1 class="myHeader">Django App</h1>
         </div>
     </div>
     <p>
         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa distinctio dolore ducimus error facere impedit inventore molestiae quae quibusdam, saepe, temporibus veniam voluptate. Hic maxime nobis omnis ut voluptatum?</span><span>Aliquam amet assumenda error quasi quod quos ut. A accusantium aspernatur culpa cupiditate deserunt, fugiat incidunt itaque laudantium modi necessitatibus pariatur placeat possimus quae quos sit tempore totam vel vero?</span><span>Aperiam aspernatur atque blanditiis cum ducimus esse ex expedita fuga inventore labore magnam maxime minus nulla odio officia, possimus quod reiciendis repellat ullam unde velit veniam voluptatibus! Error, labore, officia!</span><span>Asperiores assumenda autem corporis culpa dolores explicabo iusto labore laborum molestias nobis non odit officiis optio perferendis perspiciatis quaerat qui quo rerum, saepe unde? Adipisci aperiam incidunt magni velit veniam!</span><span>Adipisci animi, deleniti dolorum nemo nisi numquam quibusdam quidem repudiandae saepe, sequi sint veniam voluptate. Aliquid deleniti ducimus et excepturi fugiat ipsam molestiae odit omnis, quidem quod ratione ut voluptates.</span><span>A accusamus, exercitationem facere in ipsam, minima nulla pariatur perspiciatis quaerat sit, totam voluptatem voluptatibus? Accusamus, adipisci at consectetur cum enim id, laborum, minima omnis quaerat quas repellat sed sint.</span><span>Aspernatur aut culpa earum maiores quae, tenetur! Ad aspernatur autem deleniti dolores laudantium molestiae, officiis possimus quis soluta suscipit? Adipisci aspernatur delectus et, optio qui ratione sed! Consequatur placeat, voluptatibus.</span><span>Aperiam enim eos inventore numquam quis. Accusantium beatae, consequatur dignissimos dolorem eaque enim ex illum inventore libero nam natus numquam odit officia qui quia quo quod repellendus similique ullam voluptatem.</span><span>Asperiores, illo itaque laudantium maxime omnis quam quisquam reiciendis voluptatum! Dignissimos eius iste magnam modi? Accusamus dicta dignissimos doloremque inventore laboriosam nesciunt nisi non perferendis, possimus quis saepe ut voluptatem.</span><span>A esse fugiat magnam. A aliquam assumenda, autem deleniti ea iure obcaecati optio reiciendis rem? Architecto consequuntur, eos ipsa itaque laboriosam minima molestias natus nemo nesciunt officiis saepe temporibus ut!</span>
     </p>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% get_media_prefix %}london.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
 {% block extra_scripts %}
-    <script>
-        console.log("Hello World");
-    </script>
+<script>
+    console.log("Hello World");
+</script>
 {% endblock %}
