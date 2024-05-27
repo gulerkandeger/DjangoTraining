@@ -1,31 +1,20 @@
+{% extends 'layout.html' %}
 {% load static %}
 
-<!doctype html>
-<html lang="en">
-{% include 'includes/head.html' %}
-<body>
-
-<!--================Header Menu Area =================-->
-{% include 'includes/navbar.html' %}
-<!--================Header Menu Area =================-->
-
 <!--================Home Banner Area =================-->
-<section class="banner_area">
-    <div class="box_1620">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container">
-                <div class="banner_content text-center">
-                    <h2>Contact Us</h2>
-                    <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="contact.html">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% block home_banner_area %}
+
+<h2>Contact Us</h2>
+<div class="page_link">
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact Us</a>
+</div>
+</div>
+
+{% endblock %}
 <!--================End Home Banner Area =================-->
+
+{% block content %}
 
 <!--================Contact Area =================-->
 <section class="contact_area p_120">
@@ -91,7 +80,6 @@
 <!--================Contact Area =================-->
 
 
-
 <!--================Contact Success and Error message Area =================-->
 <div id="success" class="modal modal-message fade" role="dialog">
     <div class="modal-dialog">
@@ -124,8 +112,10 @@
 </div>
 <!--================End Contact Success and Error message Area =================-->
 
+{% endblock %}
 
-{% include 'includes/footer.html' %}
+{% block extra_scripts %}
+
 <!-- contact js -->
 <script src="{% static 'js/jquery.form.js' %}"></script>
 <script src="{% static 'js/jquery.validate.min.js' %}"></script>
@@ -134,5 +124,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="{% static 'js/gmaps.min.js' %}"></script>
 <script src="{% static 'js/theme.js' %}"></script>
-</body>
-</html>
+
+{% endblock %}
+
