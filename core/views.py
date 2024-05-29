@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import GeneralSetting, ImageSetting, Skill, Experience, Education
+from core.models import GeneralSetting, ImageSetting, Skill, Experience, Education, SocialMedia
 # Create your views here.
 
 def index(request):
@@ -26,6 +26,9 @@ def index(request):
     #Educations
     educations = Education.objects.all().order_by('-start_date')
 
+    #Social Media
+    socialmedias = SocialMedia.objects.all()
+
     context = {
         'site_title' : site_title,
         'site_keywords': site_keywords,
@@ -49,6 +52,9 @@ def index(request):
 
         #Educations
         'educations': educations,
+
+        #SocialMedia
+        'socialmedias': socialmedias,
 
     }
     return render(request, "index.html", context=context)
