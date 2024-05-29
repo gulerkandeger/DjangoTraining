@@ -2,7 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from core.models import GeneralSetting, ImageSetting, Skill, Experience, Education, SocialMedia, Document
 # Create your views here.
 
-def index(request):
+def layout(request):  #tüm sayfalarda kullanılanlar
+
+    # Document
+    documents = Document.objects.all()
+    #Home
     site_title = GeneralSetting.objects.get(name='site_title').parameter
     site_keywords = GeneralSetting.objects.get(name='site_keywords').parameter
     site_description = GeneralSetting.objects.get(name='site_description').parameter
@@ -11,29 +15,18 @@ def index(request):
     home_banner_description = GeneralSetting.objects.get(name='home_banner_description').parameter
     about_myself_welcome = GeneralSetting.objects.get(name='about_myself_welcome').parameter
     about_myself_footer = GeneralSetting.objects.get(name='about_myself_footer').parameter
-
-    #Images
+    # Images
     header_logo = ImageSetting.objects.get(name='header_logo').file
     home_banner_image = ImageSetting.objects.get(name='home_banner_image').file
     site_favicon = ImageSetting.objects.get(name='site_favicon').file
-
-    #Skills
-    skills = Skill.objects.all().order_by('order')
-
-    #Experiences
-    experiences = Experience.objects.all()
-
-    #Educations
-    educations = Education.objects.all().order_by('-start_date')
-
-    #Social Media
+    # Social Media
     socialmedias = SocialMedia.objects.all()
 
-    #Document
-    documents = Document.objects.all()
-
     context = {
-        'site_title' : site_title,
+        #Document
+        'documents': documents,
+        #Home
+        'site_title': site_title,
         'site_keywords': site_keywords,
         'site_description': site_description,
         'home_banner_name': home_banner_name,
@@ -41,28 +34,37 @@ def index(request):
         'home_banner_description': home_banner_description,
         'about_myself_welcome': about_myself_welcome,
         'about_myself_footer': about_myself_footer,
-
-        #Images
+        # Images
         'header_logo': header_logo,
         'home_banner_image': home_banner_image,
         'site_favicon': site_favicon,
+        # SocialMedia
+        'socialmedias': socialmedias,
+    }
+
+    return context
+
+
+def index(request):
+
+    #Skills
+    skills = Skill.objects.all().order_by('order')
+    #Experiences
+    experiences = Experience.objects.all()
+    #Educations
+    educations = Education.objects.all().order_by('-start_date')
+
+    context = {
 
         #Skills
         'skills': skills,
-
         #Experince
         'experiences': experiences,
-
         #Educations
         'educations': educations,
 
-        #SocialMedia
-        'socialmedias': socialmedias,
-
-        #Document
-        'documents': documents
-
     }
+
     return render(request, "index.html", context=context)
 
 def redirect_urls(request, slug):
