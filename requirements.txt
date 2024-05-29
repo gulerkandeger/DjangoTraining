@@ -1,10 +1,10 @@
-[1A[1B[0G[?25l[+] Creating 1/0
- [32m✔[0m Container first_django-postgres-1  [32mRunning[0m[34m0.0s [0m
-[?25hasgiref==3.6.0
+asgiref==3.6.0
 distlib==0.3.8
 Django==4.1
 django-environ==0.11.2
 filelock==3.14.0
+gunicorn==22.0.0
+packaging==24.0
 pillow==10.3.0
 platformdirs==4.2.2
 psycopg2==2.9.9
