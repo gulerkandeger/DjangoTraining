@@ -3,7 +3,9 @@ FROM python:3.10-slim
 
 RUN apt-get update
 
+RUN apt-get install libpq-dev -y
 RUN apt-get install python3-dev build-essential -y
+RUN apt-get install postgresql-client -y
 
 #set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -20,3 +22,4 @@ RUN pip install -r /tmp/requirements.txt
 
 COPY . /srv/app
 WORKDIR /srv/app
+
